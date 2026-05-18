@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Flowspace — Your All-in-One Productivity Sidebar",
+  "description": "A floating productivity workspace on every page. Rich notes with Notion-like editor, podcast player, Google Drive music library, lunar calendar, daily dashboard — all synced to Google Drive.",
+  "version": "1.0.0",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuNpxj4nZunhyQGf37qqVJafDabN00BNPTw2jO7lqwLQkBN8UQyZ9IhGDn1Zfv1wP5s4ATSuzHaY2375ndFLfDYob7JIEwTGT9v0U57Upjr8lW0Pxebom/4e68Miy3wnZuZGaunpS48slrDfX67NffZ/ZqnnbDaH6q9gXxAVNj6sHSbtAJXSS6MqS9rVDZ0zKIiewJ3588vtcaZk4VdCk4Zidb3/aqSjyqigntwpM5IF/yc/iNNtECq4N1gaKo3usK2r3h1MdWkksbPVhFtznhmWDaJswx6x3q347N0Q8pYT3ZGoNby1XQx1eiEx/JTv0Q7maa1Me5xEKrbHYWua9ZQIDAQAB",
+  "permissions": [
+    "storage",
+    "identity",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://www.googleapis.com/*",
+    "https://itunes.apple.com/*",
+    "https://gpodder.net/*",
+    "https://api.fyyd.de/*",
+    "https://api.podcastindex.org/*",
+    "https://archive.org/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

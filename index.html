@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flow Space — Your Personal Productivity Companion</title>
+  <style>
+    :root {
+      --bg: #f8f5f0;
+      --surface: #ffffff;
+      --text: #1a1a2e;
+      --text-muted: #6b7280;
+      --primary: #e07a5f;
+      --primary-dark: #c05a3f;
+      --accent: #3d5a80;
+      --success: #10b981;
+      --border: #1a1a2e;
+      --shadow: #1a1a2e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Header / Hero */
+    .hero {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .hero-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 96px;
+      height: 96px;
+      margin-bottom: 24px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .hero h1 span {
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-weight: 500;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border: 3px solid var(--border);
+      box-shadow: 4px 4px 0 var(--shadow);
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--surface);
+      transition: all 0.12s ease;
+    }
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--shadow);
+    }
+    .btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--shadow);
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Sections */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .section-title span { color: var(--primary); }
+
+    /* Features Grid */
+    .features {
+      padding: 60px 0;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--surface);
+      border: 3px solid var(--border);
+      box-shadow: 6px 6px 0 var(--shadow);
+      padding: 28px 24px;
+      transition: all 0.15s ease;
+    }
+    .feature-card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 var(--shadow);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Divider */
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: var(--primary);
+      margin: 0 auto 40px;
+    }
+
+    /* Tech Stack */
+    .tech {
+      padding: 60px 0;
+    }
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    .tech-badge {
+      padding: 10px 20px;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      box-shadow: 3px 3px 0 var(--shadow);
+      font-weight: 800;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    /* Links */
+    .links {
+      padding: 40px 0 80px;
+      text-align: center;
+    }
+    .links-grid {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .links-grid a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      box-shadow: 3px 3px 0 var(--shadow);
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: all 0.12s ease;
+    }
+    .links-grid a:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 4px 4px 0 var(--shadow);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 3px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    footer a {
+      color: var(--primary-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero { padding: 40px 16px 40px; }
+      .feature-card { padding: 20px 16px; }
+      .section-title { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-logo">
+      <img src="icons/icon-128.png" alt="Flow Space Logo" />
+    </div>
+    <h1>Flow <span>Space</span></h1>
+    <p>
+      Your all-in-one personal productivity companion for Chrome — 
+      rich-text notes, podcasts, Google Drive music, calendar, and more.
+    </p>
+    <div class="hero-actions">
+      <a href="https://github.com/haux9pro/FlowSpace" target="_blank" rel="noopener" class="btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="privacy.html" class="btn">Privacy Policy</a>
+      <a href="terms.html" class="btn">Terms of Service</a>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="features">
+    <div class="container">
+      <h2 class="section-title">Everything you <span>need</span></h2>
+      <div class="divider"></div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <span class="feature-icon">📝</span>
+          <h3>Rich Text Notes</h3>
+          <p>Full-featured Tiptap editor with headings, tables, task lists, inline formatting, tags, and hierarchical notebooks. All stored in local SQLite.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🎙️</span>
+          <h3>Podcast Manager</h3>
+          <p>Subscribe via RSS, search the Podcast Index, browse episodes, and play with a built-in mini-player. Full description expand and duration parsing.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🎵</span>
+          <h3>Google Drive Music</h3>
+          <p>Stream audio files from your own Google Drive. Organize into playlists and enjoy your personal music library directly in the extension.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">☁️</span>
+          <h3>Drive Backup</h3>
+          <p>Automatic SQLite database backup to your private Google Drive app data folder. Restore seamlessly on any device.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📅</span>
+          <h3>Calendar & Tasks</h3>
+          <p>Personal events, to-do lists, memorial and anniversary reminders with Vietnamese Lunar calendar integration.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📊</span>
+          <h3>Dashboard Overview</h3>
+          <p>Bento-grid dashboard with statistics, recent notes, quick actions, system health, and a zen quote card. One-click access to everything.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <div class="tech">
+    <div class="container">
+      <h2 class="section-title">Built with <span>modern tools</span></h2>
+      <div class="divider"></div>
+      <div class="tech-grid">
+        <span class="tech-badge">TypeScript</span>
+        <span class="tech-badge">Vite</span>
+        <span class="tech-badge">Tiptap</span>
+        <span class="tech-badge">SQLite (sql.js)</span>
+        <span class="tech-badge">Google Drive API</span>
+        <span class="tech-badge">Chrome Extensions MV3</span>
+        <span class="tech-badge">Shadow DOM</span>
+        <span class="tech-badge">Podcast Index</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Links -->
+  <div class="links">
+    <div class="container">
+      <h2 class="section-title">Legal <span>information</span></h2>
+      <div class="divider"></div>
+      <div class="links-grid">
+        <a href="privacy.html">🔒 Privacy Policy</a>
+        <a href="terms.html">📋 Terms of Service</a>
+        <a href="https://github.com/haux9pro/FlowSpace" target="_blank" rel="noopener">💻 Source Code</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      Flow Space — Built by <a href="https://github.com/haux9pro" target="_blank" rel="noopener">haux9pro</a>.
+      Licensed under MIT.
+    </p>
+  </footer>
+
+</body>
+</html>

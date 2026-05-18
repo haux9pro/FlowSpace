@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Assistance Extension logo</title>
+  <desc id="desc">Neo-brutalist assistant mark: a floating panel with an A-shaped assistant path, productivity nodes, and sync orbit.</desc>
+  <defs>
+    <linearGradient id="logo-sand" x1="18" y1="16" x2="110" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FEF7EC"/>
+      <stop offset="1" stop-color="#F0E2D0"/>
+    </linearGradient>
+    <linearGradient id="logo-copper" x1="27" y1="24" x2="101" y2="106" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DCA06F"/>
+      <stop offset="1" stop-color="#A06A40"/>
+    </linearGradient>
+  </defs>
+  <rect x="18" y="18" width="88" height="88" fill="#8C7A6B"/>
+  <rect x="12" y="12" width="88" height="88" fill="url(#logo-sand)" stroke="#2D2420" stroke-width="6"/>
+  <path d="M28 84C40 56 52 36 64 28C76 36 88 56 100 84" fill="none" stroke="#2D2420" stroke-width="10" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M38 84C47 62 56 48 64 42C72 48 81 62 90 84" fill="none" stroke="url(#logo-copper)" stroke-width="6" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M48 68H80" stroke="#2D2420" stroke-width="8" stroke-linecap="square"/>
+  <path d="M52 68H76" stroke="#FEF7EC" stroke-width="4" stroke-linecap="square"/>
+  <path d="M28 45C38 26 78 16 94 42" fill="none" stroke="#6E9B74" stroke-width="6" stroke-linecap="square"/>
+  <path d="M100 78C88 99 48 108 32 82" fill="none" stroke="#4A7C8C" stroke-width="6" stroke-linecap="square"/>
+  <rect x="23" y="31" width="16" height="16" fill="#D4833A" stroke="#2D2420" stroke-width="5"/>
+  <rect x="88" y="31" width="16" height="16" fill="#6E9B74" stroke="#2D2420" stroke-width="5"/>
+  <rect x="23" y="77" width="16" height="16" fill="#4A7C8C" stroke="#2D2420" stroke-width="5"/>
+  <rect x="88" y="77" width="16" height="16" fill="#C55A4A" stroke="#2D2420" stroke-width="5"/>
+  <rect x="58" y="58" width="12" height="12" fill="#2D2420"/>
+  <rect x="61" y="61" width="6" height="6" fill="#FEF7EC"/>
+</svg>

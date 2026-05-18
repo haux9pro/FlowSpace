@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Flow Space</title>
+  <style>
+    :root {
+      --bg: #f8f5f0;
+      --surface: #ffffff;
+      --text: #1a1a2e;
+      --text-muted: #6b7280;
+      --primary: #e07a5f;
+      --primary-dark: #c05a3f;
+      --border: #1a1a2e;
+      --shadow: #1a1a2e;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    header {
+      text-align: center;
+      padding: 48px 24px 32px;
+      background: var(--surface);
+      border-bottom: 3px solid var(--border);
+      box-shadow: 0 6px 0 var(--shadow);
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      text-transform: uppercase;
+    }
+    header p {
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 12px;
+      border: 2px solid var(--border);
+      box-shadow: 2px 2px 0 var(--shadow);
+    }
+    section {
+      background: var(--surface);
+      border: 3px solid var(--border);
+      box-shadow: 6px 6px 0 var(--shadow);
+      padding: 28px 32px;
+      margin-bottom: 28px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin: 16px 0 8px;
+      text-transform: uppercase;
+    }
+    p { margin-bottom: 12px; color: var(--text); }
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    ul li { margin-bottom: 6px; }
+    a { color: var(--primary-dark); font-weight: 700; }
+    a:hover { text-decoration: none; }
+    .highlight { background: #fef3c7; padding: 2px 6px; font-weight: 700; }
+    .last-updated {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 40px;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.6rem; }
+      section { padding: 20px 16px; }
+      .container { padding: 20px 12px 60px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Privacy Policy</h1>
+    <p>Flow Space — Your personal productivity companion</p>
+    <span class="badge">Last Updated: May 2026</span>
+  </header>
+  <div class="container">
+
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Flow Space ("we", "our", or "the extension") is a Chrome browser extension 
+        designed to help you take notes, manage podcasts, organize music from Google Drive, 
+        track calendar events, and boost your productivity. This privacy policy explains 
+        how we handle your data when you use the extension.
+      </p>
+      <p>
+        <strong>We do not collect, sell, or share your personal data with any third parties.</strong> 
+        All your data is stored locally on your device and, if you choose, in your own 
+        Google Drive account.
+      </p>
+    </section>
+
+    <section>
+      <h2>Data We Access</h2>
+
+      <h3>🔐 Google Account (via OAuth 2.0)</h3>
+      <p>
+        When you connect your Google account, we request the following permissions:
+      </p>
+      <ul>
+        <li><strong>drive.appdata</strong> — To back up your SQLite database to a hidden app-specific folder in your Google Drive. This data is invisible to other apps and users.</li>
+        <li><strong>drive.readonly</strong> — To read audio files you have manually placed inside a <code>PersonalAssistantExtension/Musics</code> folder in your Google Drive for the music player feature.</li>
+        <li><strong>userinfo.email & userinfo.profile</strong> — To display your account info when connected, so you know which account is linked.</li>
+      </ul>
+      <p>
+        We <strong>never</strong> access your documents, spreadsheets, photos, or any files outside of:
+        the hidden app data folder (for backups), and the <code>PersonalAssistantExtension/Musics</code> 
+        folder (for music playback).
+      </p>
+
+      <h3>🗂️ Note Content (Tiptap Editor)</h3>
+      <p>
+        All notes, notebooks, tags, and rich text content you create are stored:
+      </p>
+      <ul>
+        <li><strong>Locally</strong> — in an SQLite database synced via <code>chrome.storage.local</code>.</li>
+        <li><strong>In your Google Drive (optional)</strong> — only if you enable the backup feature, the entire database is uploaded as a single encrypted blob to your private app data folder.</li>
+      </ul>
+
+      <h3>🎙️ Podcast Subscriptions</h3>
+      <p>
+        When you add a podcast via RSS feed URL, the extension fetches the feed to retrieve 
+        episode metadata (title, description, audio URL, duration, artwork). The extension does 
+        <strong>not</strong> host, store, or redistribute any copyrighted podcast content. 
+        It simply provides a player interface for the audio files hosted by the original 
+        podcast publishers.
+      </p>
+      <p>
+        Podcast Index API keys (if provided) are stored locally and used solely to search 
+        the Podcast Index database at your request.
+      </p>
+
+      <h3>📅 Calendar Events</h3>
+      <p>
+        Your to-do tasks and personal events (including memorial dates, anniversary reminders, 
+        and Vietnamese Lunar calendar dates) are stored locally in your SQLite database. 
+        No calendar data is sent to any external server.
+      </p>
+    </section>
+
+    <section>
+      <h2>Data Storage & Security</h2>
+      <ul>
+        <li><strong>Local Storage:</strong> All primary data is stored in an SQLite database 
+        that lives in your browser's local storage. The database is <strong>not encrypted at rest</strong> 
+        by the extension (we rely on your browser's built-in sandboxing).</li>
+        <li><strong>Google Drive Backup:</strong> If you enable backup, your database file is 
+        uploaded to your private Google Drive app data folder. This folder is only accessible 
+        by this extension and cannot be seen or accessed by other apps or users.</li>
+        <li><strong>Authentication Tokens:</strong> OAuth tokens are managed by Chrome's 
+        <code>chrome.identity</code> API and are never exposed to any third party.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <p>The extension communicates with the following external services solely at your request:</p>
+      <ul>
+        <li><strong>Google Drive API</strong> — For backup/restore and music library access.</li>
+        <li><strong>Podcast RSS Feeds</strong> — To fetch episode data from URLs you provide.</li>
+        <li><strong>Podcast Index API (optional)</strong> — If you provide an API key, to search for podcasts.</li>
+      </ul>
+      <p>No data is sent to any analytics, tracking, or advertising services.</p>
+    </section>
+
+    <section>
+      <h2>Data You Control</h2>
+      <p>You have full control over your data at all times:</p>
+      <ul>
+        <li><strong>Export / Backup:</strong> Use the Google Drive backup feature to save your database.</li>
+        <li><strong>Delete:</strong> Uninstalling the extension will remove all locally stored data. 
+        Google Drive backups can be manually deleted from your Google Drive app data folder.</li>
+        <li><strong>Disconnect:</strong> You can disconnect Google Drive at any time from the extension's settings.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Children's Privacy</h2>
+      <p>
+        The extension is not directed at children under the age of 13. We do not knowingly 
+        collect any personal information from children.
+      </p>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>
+        We may update this privacy policy from time to time. Changes will be reflected 
+        with an updated "Last Updated" date at the top of this page.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        If you have any questions about this privacy policy, please open an issue on 
+        our <a href="https://github.com/haux9pro/FlowSpace" target="_blank" rel="noopener">GitHub repository</a>.
+      </p>
+    </section>
+
+    <p class="last-updated">Last Updated: May 18, 2026</p>
+  </div>
+</body>
+</html>
